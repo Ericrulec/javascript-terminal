@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/terminal.css" />
+    <link rel="stylesheet" href="styles/experiment.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css"
+    />
+  </head>
+
+  <body>
+    <div id="screen" class="terminal">
+      <div id="Container">
+        <div class="noise"></div>
+        <div class="flicker"></div>
+        <div id="input">
+          <p id="input_title"></p>
+          <input
+            id="input_source"
+            type="command"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            autofocus
+          />
+        </div>
+        <div id="logger">
+          <div id="wrapper">
+            <div class="log">
+              <pre>
+    _ ____   _____ _________ _   _ _ _     ____ _    
+   / | ___\ /__ __\  __/  __\ \__/| \ \  /|  _ \ \   
+   | ||_  \   / \ |  \ |  \/| |\/|| | |\ || / \| |   
+/\_| |__| |   | | |  /_|    / |  || | | \|| |-|| |_/\
+\____/____/   \_/ \____\_/\_\_/  \|_/_/  \|_/ \|____/
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/terminal.js"></script>
+    <script src="js/commands.js"></script>
+    <script src="js/man.js"></script>
+  </body>
+</html>

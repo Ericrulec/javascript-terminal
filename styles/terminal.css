@@ -1,0 +1,211 @@
+body {
+  background: black;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+#screen {
+  background-color: #031e11;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.terminal {
+  /* text-shadow: 0 0.2rem 1rem #0c7b46; */
+  text-shadow: 0 0 5px #c8c8c8;
+}
+:root {
+  --background: #031e11;
+}
+
+#Container,
+#Container > div {
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  -o-transform: rotate(180deg);
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+#wrapper {
+  display: table-cell;
+  vertical-align: bottom;
+  height: 100%;
+}
+
+.log {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.log p {
+  color: white;
+  font-family: "Hack", monospace;
+  margin: 0;
+}
+
+#input {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#input p,
+pre,
+a {
+  /*color: #00e676;*/
+  color: white;
+  display: inline-block;
+  font-family: "Hack", monospace;
+  padding-right: 0.2em;
+  margin: 0;
+}
+#input input {
+  background-color: #031e11;
+  width: 85%;
+  display: inline-block;
+  padding-bottom: 100vh;
+}
+
+input[type="command"] {
+  background-color: #031e11;
+  text-shadow: 0 0 5px #c8c8c8;
+  border: 0;
+  color: white;
+  font-family: "Hack", monospace;
+  font-size: 16px;
+  outline: 0;
+}
+
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2000;
+  opacity: 0.05;
+  pointer-events: none;
+  background: repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/2500px
+      2500px,
+    repeating-conic-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 50%/2500px
+      2500px;
+  background-blend-mode: difference;
+  animation: shift 1s infinite alternate;
+}
+
+.flicker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.2);
+  opacity: 0;
+  z-index: 1000;
+  pointer-events: none;
+  animation: flicker 0.12s infinite;
+}
+@keyframes flicker {
+  0% {
+    opacity: 0.552;
+  }
+  5% {
+    opacity: 0.48287;
+  }
+  10% {
+    opacity: 0.59134;
+  }
+  15% {
+    opacity: 0.79543;
+  }
+  20% {
+    opacity: 0.75134;
+  }
+  25% {
+    opacity: 0.1956;
+  }
+  30% {
+    opacity: 0.90687;
+  }
+  35% {
+    opacity: 0.122;
+  }
+  40% {
+    opacity: 0.62254;
+  }
+  45% {
+    opacity: 0.56977;
+  }
+  50% {
+    opacity: 0.9925;
+  }
+  55% {
+    opacity: 0.55487;
+  }
+  60% {
+    opacity: 0.16607;
+  }
+  65% {
+    opacity: 0.12353;
+  }
+  70% {
+    opacity: 0.2214;
+  }
+  75% {
+    opacity: 0.67908;
+  }
+  80% {
+    opacity: 0.97163;
+  }
+  85% {
+    opacity: 0.1275;
+  }
+  90% {
+    opacity: 0.37186;
+  }
+  95% {
+    opacity: 0.24475;
+  }
+  100% {
+    opacity: 0.37221;
+  }
+}
+@keyframes vline {
+  to {
+    transform: translate(0, 100vh);
+  }
+}
+@keyframes opacity {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes size {
+  50% {
+    transform: scaleX(calc(1 / var(--width)));
+    opacity: 1;
+  }
+  98% {
+    transform: scaleX(calc(1 / var(--width))) scaleY(calc(1 / var(--height)));
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(calc(1 / var(--width))) scaleY(calc(1 / var(--height)));
+    opacity: 0;
+  }
+}
+
+@keyframes shift {
+  100% {
+    background-position: 50% 0, 50% 60%;
+  }
+}
+@media (prefers-reduced-motion) {
+  .noise,
+  .flicker;
+}
